@@ -1,0 +1,1 @@
+python /panorama.py --settings=/config/panorama_openedx_settings.yaml --debug test-connections
