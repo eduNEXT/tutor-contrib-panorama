@@ -125,6 +125,7 @@ datasources:
       name: goals
     - type: tinyint
       name: allow_certificate
+      value: null
     - type: varchar
       name: bio
     - type: datetime

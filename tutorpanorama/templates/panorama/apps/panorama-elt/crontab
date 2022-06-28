@@ -1,2 +1,2 @@
-{{ PANORAMA_CRONTAB }} python panorama.py --settings /config/panorama_openedx_settings.yaml extract-and-load --all
+{{ PANORAMA_CRONTAB }} python panorama-elt/panorama.py --settings /config/panorama_openedx_settings.yaml extract-and-load --all
 

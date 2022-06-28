@@ -145,7 +145,7 @@ spec:
           command:
             - /bin/sh
             - -c
-            - python panorama.py --settings /config/panorama_openedx_settings.yaml test-connections
+            - python /panorama-elt/panorama.py --settings /config/panorama_openedx_settings.yaml test-connections;python /panorama-elt/panorama.py --settings /config/panorama_openedx_settings.yaml create-datalake-tables --all;python /panorama-elt/panorama.py --settings /config/panorama_openedx_settings.yaml create-table-views --all
       volumes:
         - name: config
           configMap:
@@ -182,7 +182,7 @@ spec:
               command:
                 - /bin/sh
                 - -c
-                - python panorama.py --settings /config/panorama_openedx_settings.yaml extract-and-load --all
+                - python /panorama-elt/panorama.py --settings /config/panorama_openedx_settings.yaml extract-and-load --all
           volumes:
             - name: config
               configMap:
