@@ -1,0 +1,62 @@
+---
+# Init job. Will only run a connection test
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: panorama-job
+  labels:
+    app.kubernetes.io/name: panorama-elt
+spec:
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: panorama-elt
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: panorama-elt
+          image: docker.io/aulasneo/panorama-elt:{{ PANORAMA_VERSION }}
+          volumeMounts:
+            - mountPath: /config/
+              name: config
+          command:
+            - /bin/sh
+            - -c
+            - python /panorama-elt/panorama.py --settings /config/panorama_openedx_settings.yaml test-connections;python /panorama-elt/panorama.py --settings /config/panorama_openedx_settings.yaml create-datalake-tables --all;python /panorama-elt/panorama.py --settings /config/panorama_openedx_settings.yaml create-table-views --all
+      volumes:
+        - name: config
+          configMap:
+            name: panorama-elt-config
+
+---
+# Cronjob. Will query the db and upload to the datalake periodically
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: panorama-elt
+  labels:
+    app.kubernetes.io/name: panorama-elt
+spec:
+  schedule: {{ PANORAMA_CRONTAB }}
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app.kubernetes.io/name: panorama-elt
+        spec:
+          restartPolicy: Never
+          containers:
+            - name: panorama-elt
+              image: docker.io/aulasneo/panorama-elt:{{ PANORAMA_VERSION }}
+              volumeMounts:
+                - mountPath: /config/
+                  name: config
+              command:
+                - /bin/sh
+                - -c
+                - python /panorama-elt/panorama.py --settings /config/panorama_openedx_settings.yaml extract-and-load --all
+          volumes:
+            - name: config
+              configMap:
+                name: panorama-elt-config

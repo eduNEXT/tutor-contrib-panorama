@@ -1,4 +1,4 @@
-FROM public.ecr.aws/aws-observability/aws-for-fluent-bit:2.23.3
+FROM public.ecr.aws/aws-observability/aws-for-fluent-bit:2.28.1
 
 # LABEL about the custom image
 LABEL maintainer="devops@aulasneo.com"
