@@ -58,6 +58,26 @@ datasources:
   mysql_host: {{ MYSQL_HOST }}
   mysql_database: {{ OPENEDX_MYSQL_DATABASE }}
   tables:
+  - name: student_anonymoususerid
+    fields:
+    - name: id
+      type: int
+    - name: anonymous_user_id
+      type: varchar
+    - name: course_id
+      type: varchar
+    - name: user_id
+      type: int
+  - name: site_configuration_siteconfiguration
+    fields:
+    - name: id
+      type: int
+    - name: site_id
+      type: int
+    - name: enabled
+      type: tinyint
+    - name: site_values
+      type: longtext
   - fields:
     - type: int
       name: id
