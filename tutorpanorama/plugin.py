@@ -19,8 +19,8 @@ config = {
         "DATALAKE_DATABASE": "panorama",
         "DATALAKE_WORKGROUP": "panorama",
         "AWS_ACCESS_KEY": "{{ OPENEDX_AWS_ACCESS_KEY }}",
-        "AWS_SECRET_ACCESS_KEY": "{{ OPENEDX_AWS_SECRET_ACCESS_KEY }}"
-
+        "AWS_SECRET_ACCESS_KEY": "{{ OPENEDX_AWS_SECRET_ACCESS_KEY }}",
+        "FLB_LOG_LEVEL": 'info',
     },
     # Add here settings that don't have a reasonable default for all users. For
     # instance: passwords, secret keys, etc.
