@@ -1,5 +1,6 @@
 # Change log
 ## 0.1.9
+- Fix: use PANORAMA_REGION in fluentbit configuration
 - Improve fluentbit config
 - Add student anonymous user id table
 - Add site configuration table
