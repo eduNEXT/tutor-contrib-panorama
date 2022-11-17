@@ -6,6 +6,7 @@
 - Add site configuration table
 - Add PANORAMA_FLB_LOG_LEVEL to set fluent-bit logging level (default: info). 
 Set to 'debug' to debug fluentbit.
+- Use the aws credentials configured for Panorama, for fluentbit
 ## 0.1.8
 - Fixed a bug in panorama-elt
 ## 0.1.7

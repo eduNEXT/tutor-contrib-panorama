@@ -62,7 +62,11 @@ spec:
       - name: aws-for-fluent-bit
         env:
           - name: FLB_LOG_LEVEL
-            value: debug
+            value: {{ PANORAMA_FLB_LOG_LEVEL }}
+          - name: AWS_ACCESS_KEY_ID
+            value: {{ PANORAMA_AWS_ACCESS_KEY }}
+          - name: AWS_SECRET_ACCESS_KEY
+            value: {{ PANORAMA_AWS_SECRET_ACCESS_KEY }}
         image: docker.io/aulasneo/panorama-elt-logs:{{ PANORAMA_VERSION }}
         volumeMounts:
         - name: varlog
