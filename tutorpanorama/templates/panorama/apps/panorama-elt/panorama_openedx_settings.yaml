@@ -18,6 +18,10 @@ datasources:
   mongodb_username: {{ MONGODB_USERNAME }}
   mongodb_password: {{ MONGODB_PASSWORD }}
   mongodb_database: {{ MONGODB_DATABASE }}
+  mysql_username: {{ OPENEDX_MYSQL_USERNAME }}
+  mysql_password: {{ OPENEDX_MYSQL_PASSWORD }}
+  mysql_host: {{ MYSQL_HOST }}
+  mysql_database: {{ OPENEDX_MYSQL_DATABASE }}
   tables:
   - name: course_structures
     fields:
