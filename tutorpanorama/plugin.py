@@ -21,6 +21,7 @@ config = {
         "AWS_ACCESS_KEY": "{{ OPENEDX_AWS_ACCESS_KEY }}",
         "AWS_SECRET_ACCESS_KEY": "{{ OPENEDX_AWS_SECRET_ACCESS_KEY }}",
         "FLB_LOG_LEVEL": 'info',
+        "USE_SPLIT_MONGO": True,
     },
     # Add here settings that don't have a reasonable default for all users. For
     # instance: passwords, secret keys, etc.

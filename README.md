@@ -95,6 +95,7 @@ Optional variables (defaults will generally work):
 - PANORAMA_DATALAKE_WORKGROUP: Name of the AWS Athena workgroup (Default "panorama")
 - PANORAMA_AWS_ACCESS_KEY: AWS access key (Default OPENEDX_AWS_ACCESS_KEY)
 - PANORAMA_AWS_SECRET_ACCESS_KEY: AWS access secret OPENEDX_AWS_SECRET_ACCESS_KEY)
+- PANORAMA_USE_SPLIT_MONGO (default True): Set to false for versions older than Maple
 
 ## Datalake directory structure
 

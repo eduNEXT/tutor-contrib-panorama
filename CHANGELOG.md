@@ -1,4 +1,6 @@
 # Change log
+## 2.0.1
+- Add the option PANORAMA_USE_SPLIT_MONGO (default True)
 ## 0.1.9
 - Fix: use PANORAMA_REGION in fluentbit configuration
 - Improve fluentbit config
