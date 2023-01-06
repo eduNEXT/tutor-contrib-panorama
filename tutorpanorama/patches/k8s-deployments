@@ -1,3 +1,4 @@
+{% if PANORAMA_RUN_K8S_FLUENTBIT %}
 # Panorama logs (fluentbit) for K8s - ClusterRole
 ---
 apiVersion: v1
@@ -98,4 +99,4 @@ spec:
       - name: mnt
         hostPath:
           path: /mnt
-
+{% endif %}

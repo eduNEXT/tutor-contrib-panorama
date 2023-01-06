@@ -22,6 +22,8 @@ config = {
         "AWS_SECRET_ACCESS_KEY": "{{ OPENEDX_AWS_SECRET_ACCESS_KEY }}",
         "FLB_LOG_LEVEL": 'info',
         "USE_SPLIT_MONGO": True,
+        "RUN_K8S_FLUENTBIT": True,
+        "DEBUG": False,
     },
     # Add here settings that don't have a reasonable default for all users. For
     # instance: passwords, secret keys, etc.
@@ -38,38 +40,38 @@ config = {
 # To run the script from templates/panorama/tasks/myservice/init, add:
 hooks.Filters.COMMANDS_INIT.add_item((
     "panorama",
-    ("panorama", "tasks", "panorama-elt", "init.sh"),
+    ("panorama", "tasks", "panorama-elt", "init"),
 ))
 
 ################# Docker image management
 # To build an image with `tutor images build myimage`
 hooks.Filters.IMAGES_BUILD.add_item((
-    "panorama-elt",
+    "panorama",
     ("plugins", "panorama", "build", "panorama-elt"),
     "docker.io/aulasneo/panorama-elt:{{ PANORAMA_VERSION }}",
     (),
 ))
 hooks.Filters.IMAGES_BUILD.add_item((
-    "panorama-elt",
+    "panorama",
     ("plugins", "panorama", "build", "panorama-elt-logs"),
     "docker.io/aulasneo/panorama-elt-logs:{{ PANORAMA_VERSION }}",
     (),
 ))
 # To pull/push an image with `tutor images pull myimage` and `tutor images push myimage`:
 hooks.Filters.IMAGES_PULL.add_item((
-    "panorama-elt",
+    "panorama",
     "docker.io/aulasneo/panorama-elt:{{ PANORAMA_VERSION }}",
 ))
 hooks.Filters.IMAGES_PULL.add_item((
-    "panorama-elt-logs",
+    "panorama",
     "docker.io/aulasneo/panorama-elt-logs:{{ PANORAMA_VERSION }}",
 ))
 hooks.Filters.IMAGES_PUSH.add_item((
-    "panorama-elt",
+    "panorama",
     "docker.io/aulasneo/panorama-elt:{{ PANORAMA_VERSION }}",
 ))
 hooks.Filters.IMAGES_PUSH.add_item((
-    "panorama-elt-logs",
+    "panorama-elt",
     "docker.io/aulasneo/panorama-elt-logs:{{ PANORAMA_VERSION }}",
 ))
 

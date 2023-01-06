@@ -5,12 +5,9 @@ kind: Job
 metadata:
   name: panorama-job
   labels:
-    app.kubernetes.io/name: panorama-elt
+    app.kubernetes.io/component: job
 spec:
   template:
-    metadata:
-      labels:
-        app.kubernetes.io/name: panorama-elt
     spec:
       restartPolicy: Never
       containers:
@@ -19,10 +16,6 @@ spec:
           volumeMounts:
             - mountPath: /config/
               name: config
-          command:
-            - /bin/sh
-            - -c
-            - python /panorama-elt/panorama.py --settings /config/panorama_openedx_settings.yaml test-connections;python /panorama-elt/panorama.py --settings /config/panorama_openedx_settings.yaml create-datalake-tables --all;python /panorama-elt/panorama.py --settings /config/panorama_openedx_settings.yaml create-table-views --all
       volumes:
         - name: config
           configMap:
@@ -55,7 +48,7 @@ spec:
               command:
                 - /bin/sh
                 - -c
-                - python /panorama-elt/panorama.py --settings /config/panorama_openedx_settings.yaml extract-and-load --all
+                - python /panorama-elt/panorama.py --settings /config/panorama_openedx_settings.yaml {% if PANORAMA_DEBUG %}--debug {% endif %}extract-and-load --all
           volumes:
             - name: config
               configMap:

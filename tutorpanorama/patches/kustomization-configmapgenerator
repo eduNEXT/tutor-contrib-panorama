@@ -6,6 +6,8 @@
   options:
     labels:
         app.kubernetes.io/name: panorama-elt
+
+{% if PANORAMA_RUN_K8S_FLUENTBIT %}
 - name: fluent-bit-config
   files:
     - ../env/plugins/panorama/apps/panorama-elt/fluent-bit.conf
@@ -13,3 +15,4 @@
   options:
     labels:
       app.kubernetes.io/name: fluentbit
+{% endif %}
