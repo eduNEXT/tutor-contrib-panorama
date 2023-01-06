@@ -1,5 +1,10 @@
 # Change log
-## 2.0.1
+## 0.2.4
+- Improved init command in K8s
+- Added PANORAMA_DEBUG option (default=False) to have debug logs
+- Added PANORAMA_RUN_K8S_FLUENTBIT option (default=True) to skip fluentbit manifests in K8s
+
+## 0.2.1
 - Add the option PANORAMA_USE_SPLIT_MONGO (default True)
 ## 0.1.9
 - Fix: use PANORAMA_REGION in fluentbit configuration
