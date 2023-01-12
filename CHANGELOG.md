@@ -1,4 +1,10 @@
 # Change log
+## Unreleased
+- Added two settings to control when fluentbit uploads log files: PANORAMA_LOGS_TOTAL_FILE_SIZE (default 1M) and 
+PANORAMA_LOGS_UPLOAD_TIMEOUT (default 15m). A new file will be uploaded when it exceeds the total file size,
+or after the upload timeout, whatever happens first. Increase these values to reduce traffic (and cost)
+when uploading to the datalake. Reduce them to have faster updates.
+
 ## 0.2.4
 - Improved init command in K8s
 - Added PANORAMA_DEBUG option (default=False) to have debug logs

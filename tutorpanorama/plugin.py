@@ -24,6 +24,8 @@ config = {
         "USE_SPLIT_MONGO": True,
         "RUN_K8S_FLUENTBIT": True,
         "DEBUG": False,
+        "LOGS_TOTAL_FILE_SIZE": "1M",
+        "LOGS_UPLOAD_TIMEOUT": "15m",
     },
     # Add here settings that don't have a reasonable default for all users. For
     # instance: passwords, secret keys, etc.
