@@ -1,5 +1,5 @@
 # Change log
-## Unreleased
+## Version 0.3.1 (2023-02-15)
 - Fix bug in push hooks that prevented panorama-elt-logs image to be pushed.
 
 ## Version 0.3.0 (2023-01-12)
