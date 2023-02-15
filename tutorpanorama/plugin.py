@@ -73,7 +73,7 @@ hooks.Filters.IMAGES_PUSH.add_item((
     "docker.io/aulasneo/panorama-elt:{{ PANORAMA_VERSION }}",
 ))
 hooks.Filters.IMAGES_PUSH.add_item((
-    "panorama-elt",
+    "panorama",
     "docker.io/aulasneo/panorama-elt-logs:{{ PANORAMA_VERSION }}",
 ))
 

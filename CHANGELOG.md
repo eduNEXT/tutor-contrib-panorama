@@ -1,4 +1,7 @@
 # Change log
+## Unreleased
+- Fix bug in push hooks that prevented panorama-elt-logs image to be pushed.
+
 ## Version 0.3.0 (2023-01-12)
 - Added two settings to control when fluentbit uploads log files: PANORAMA_LOGS_TOTAL_FILE_SIZE (default 1M) and 
 PANORAMA_LOGS_UPLOAD_TIMEOUT (default 15m). A new file will be uploaded when it exceeds the total file size,
