@@ -444,3 +444,21 @@ datasources:
     - type: int
       name: course_user_group_id
     name: course_groups_unregisteredlearnercohortassignments
+  - name: completion_blockcompletion
+    fields:
+    - name: created
+      type: datetime
+    - name: modified
+      type: datetime
+    - name: id
+      type: bigint
+    - name: course_key
+      type: varchar
+    - name: block_key
+      type: varchar
+    - name: block_type
+      type: varchar
+    - name: completion
+      type: double
+    - name: user_id
+      type: int

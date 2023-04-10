@@ -1,4 +1,8 @@
 # Change log
+
+## Unreleased
+- Add completion_blockcompletion table
+
 ## Version 0.3.1 (2023-02-15)
 - Fix bug in push hooks that prevented panorama-elt-logs image to be pushed.
 
