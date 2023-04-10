@@ -1,6 +1,6 @@
 # Change log
 
-## Unreleased
+## Version 0.4.0 (2023-04-10)
 - Add completion_blockcompletion table
 
 ## Version 0.3.1 (2023-02-15)
