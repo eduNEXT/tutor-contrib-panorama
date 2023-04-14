@@ -462,3 +462,91 @@ datasources:
       type: double
     - name: user_id
       type: int
+  - name: enterprise_enterprisecustomeruser
+    fields:
+    - name: id
+      type: int
+    - name: created
+      type: datetime
+    - name: modified
+      type: datetime
+    - name: user_id
+      type: int
+    - name: enterprise_customer_id
+      type: char
+    - name: active
+      type: tinyint
+    - name: linked
+      type: tinyint
+    - name: invite_key_id
+      type: char
+    - name: should_inactivate_other_customers
+      type: tinyint
+  - name: enterprise_enterprisecustomer
+    fields:
+    - name: created
+      type: datetime
+    - name: modified
+      type: datetime
+    - name: uuid
+      type: char
+    - name: name
+      type: varchar
+    - name: active
+      type: tinyint
+    - name: site_id
+      type: int
+    - name: enable_data_sharing_consent
+      type: tinyint
+    - name: enforce_data_sharing_consent
+      type: varchar
+    - name: enable_audit_enrollment
+      type: tinyint
+    - name: enable_audit_data_reporting
+      type: tinyint
+    - name: replace_sensitive_sso_username
+      type: tinyint
+    - name: hide_course_original_price
+      type: tinyint
+    - name: slug
+      type: varchar
+    - name: country
+      type: varchar
+    - name: enable_autocohorting
+      type: tinyint
+    - name: customer_type_id
+      type: int
+    - name: enable_portal_code_management_screen
+      type: tinyint
+    - name: enable_learner_portal
+      type: tinyint
+    - name: enable_portal_reporting_config_screen
+      type: tinyint
+    - name: contact_email
+      type: varchar
+    - name: enable_portal_subscription_management_screen
+      type: tinyint
+    - name: enable_slug_login
+      type: tinyint
+    - name: enable_portal_saml_configuration_screen
+      type: tinyint
+    - name: default_contract_discount
+      type: decimal
+    - name: enable_analytics_screen
+      type: tinyint
+    - name: enable_integrated_customer_learner_portal_search
+      type: tinyint
+    - name: default_language
+      type: varchar
+    - name: enable_portal_lms_configurations_screen
+      type: tinyint
+    - name: sender_alias
+      type: varchar
+    - name: reply_to
+      type: varchar
+    - name: hide_labor_market_data
+      type: tinyint
+    - name: enable_universal_link
+      type: tinyint
+    - name: enable_browse_and_request
+      type: tinyint

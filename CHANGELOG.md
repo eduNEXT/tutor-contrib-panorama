@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Add enterprise_enterprisecustomer and enterprise_enterprisecustomeruser tables
+
 ## Version 0.4.0 (2023-04-10)
 - Add completion_blockcompletion table
 
