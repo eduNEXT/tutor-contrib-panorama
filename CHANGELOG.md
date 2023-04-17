@@ -1,6 +1,6 @@
 # Change log
 
-## Unreleased
+## Version 0.4.2 (2023-04-17)
 - Add enterprise_pendingenterprisecustomeruser
 
 ## Version 0.4.1 (2023-04-14)
