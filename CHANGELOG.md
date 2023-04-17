@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Add enterprise_pendingenterprisecustomeruser
+
 ## Version 0.4.1 (2023-04-14)
 - Add enterprise_enterprisecustomer and enterprise_enterprisecustomeruser tables
 

@@ -550,3 +550,15 @@ datasources:
       type: tinyint
     - name: enable_browse_and_request
       type: tinyint
+  - name: enterprise_pendingenterprisecustomeruser
+    fields:
+    - name: id
+      type: int
+    - name: created
+      type: datetime
+    - name: modified
+      type: datetime
+    - name: user_email
+      type: varchar
+    - name: enterprise_customer_id
+      type: char
