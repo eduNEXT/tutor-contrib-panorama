@@ -1,6 +1,6 @@
 # Change log
 
-## Unreleased
+## Version 0.4.6 (2023-04-25)
 - Use variables to set docker image names
 
 ## Version 0.4.2 (2023-04-17)
