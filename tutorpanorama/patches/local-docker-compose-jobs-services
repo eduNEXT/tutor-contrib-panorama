@@ -1,4 +1,4 @@
 panorama-job:
-    image: docker.io/aulasneo/panorama-elt:{{ PANORAMA_VERSION }}
+    image: {{ PANORAMA_DOCKER_IMAGES }}
     volumes:
         - ../plugins/panorama/apps/panorama-elt/panorama_openedx_settings.yaml:/config/panorama_openedx_settings.yaml:ro

@@ -68,7 +68,7 @@ spec:
             value: {{ PANORAMA_AWS_ACCESS_KEY }}
           - name: AWS_SECRET_ACCESS_KEY
             value: {{ PANORAMA_AWS_SECRET_ACCESS_KEY }}
-        image: docker.io/aulasneo/panorama-elt-logs:{{ PANORAMA_VERSION }}
+        image: {{ PANORAMA_LOGS_DOCKER_IMAGE }}
         volumeMounts:
         - name: varlog
           mountPath: /var/log

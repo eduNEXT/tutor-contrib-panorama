@@ -12,7 +12,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: panorama-elt
-          image: docker.io/aulasneo/panorama-elt:{{ PANORAMA_VERSION }}
+          image: {{ PANORAMA_DOCKER_IMAGES }}
           volumeMounts:
             - mountPath: /config/
               name: config
@@ -41,7 +41,7 @@ spec:
           restartPolicy: Never
           containers:
             - name: panorama-elt
-              image: docker.io/aulasneo/panorama-elt:{{ PANORAMA_VERSION }}
+              image: {{ PANORAMA_DOCKER_IMAGES }}
               volumeMounts:
                 - mountPath: /config/
                   name: config
