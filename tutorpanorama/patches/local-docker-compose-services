@@ -1,6 +1,6 @@
 # Docker image for local installation
 panorama:
-    image: {{ PANORAMA_DOCKER_IMAGES }}
+    image: {{ PANORAMA_DOCKER_IMAGE }}
     volumes:
         - ../plugins/panorama/apps/panorama-elt/panorama_openedx_settings.yaml:/config/panorama_openedx_settings.yaml:ro
         - ../plugins/panorama/apps/panorama-elt/crontab:/etc/cron.d/crontab:ro
