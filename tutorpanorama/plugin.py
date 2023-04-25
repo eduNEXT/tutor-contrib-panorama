@@ -26,8 +26,8 @@ config = {
         "DEBUG": False,
         "LOGS_TOTAL_FILE_SIZE": "1M",
         "LOGS_UPLOAD_TIMEOUT": "15m",
-        "DOCKER_IMAGE": f"docker.io/aulasneo/panorama-elt:{__version__}",
-        "LOGS_DOCKER_IMAGE": f"docker.io/aulasneo/panorama-elt-logs:{__version__}",
+        "DOCKER_IMAGE": f"{{ DOCKER_REGISTRY }}aulasneo/panorama-elt:{__version__}",
+        "LOGS_DOCKER_IMAGE": f"{{ DOCKER_REGISTRY }}aulasneo/panorama-elt-logs:{__version__}",
     },
     # Add here settings that don't have a reasonable default for all users. For
     # instance: passwords, secret keys, etc.
