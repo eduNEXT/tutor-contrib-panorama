@@ -1,6 +1,6 @@
 # Change log
 
-## Unreleased
+## Version 0.4.4 (2023-04-25)
 - Fix docker image names
 
 ## Version 0.4.3 (2023-04-25)
