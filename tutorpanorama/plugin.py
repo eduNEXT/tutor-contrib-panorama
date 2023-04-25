@@ -26,6 +26,8 @@ config = {
         "DEBUG": False,
         "LOGS_TOTAL_FILE_SIZE": "1M",
         "LOGS_UPLOAD_TIMEOUT": "15m",
+        "DOCKER_IMAGE": f"docker.io/aulasneo/panorama-elt:{__version__}",
+        "LOGS_DOCKER_IMAGE": f"docker.io/aulasneo/panorama-elt-logs:{__version__}",
     },
     # Add here settings that don't have a reasonable default for all users. For
     # instance: passwords, secret keys, etc.
@@ -50,31 +52,31 @@ hooks.Filters.COMMANDS_INIT.add_item((
 hooks.Filters.IMAGES_BUILD.add_item((
     "panorama",
     ("plugins", "panorama", "build", "panorama-elt"),
-    "docker.io/aulasneo/panorama-elt:{{ PANORAMA_VERSION }}",
+    "{{ PANORAMA_DOCKER_IMAGE }}",
     (),
 ))
 hooks.Filters.IMAGES_BUILD.add_item((
     "panorama",
     ("plugins", "panorama", "build", "panorama-elt-logs"),
-    "docker.io/aulasneo/panorama-elt-logs:{{ PANORAMA_VERSION }}",
+    "{{ PANORAMA_LOGS_DOCKER_IMAGE }}",
     (),
 ))
 # To pull/push an image with `tutor images pull myimage` and `tutor images push myimage`:
 hooks.Filters.IMAGES_PULL.add_item((
     "panorama",
-    "docker.io/aulasneo/panorama-elt:{{ PANORAMA_VERSION }}",
+    "{{ PANORAMA_DOCKER_IMAGE }}",
 ))
 hooks.Filters.IMAGES_PULL.add_item((
     "panorama",
-    "docker.io/aulasneo/panorama-elt-logs:{{ PANORAMA_VERSION }}",
+    "{{ PANORAMA_LOGS_DOCKER_IMAGE }}",
 ))
 hooks.Filters.IMAGES_PUSH.add_item((
     "panorama",
-    "docker.io/aulasneo/panorama-elt:{{ PANORAMA_VERSION }}",
+    "{{ PANORAMA_DOCKER_IMAGE }}",
 ))
 hooks.Filters.IMAGES_PUSH.add_item((
     "panorama",
-    "docker.io/aulasneo/panorama-elt-logs:{{ PANORAMA_VERSION }}",
+    "{{ PANORAMA_LOGS_DOCKER_IMAGE }}",
 ))
 
 # TODO: implement logs extraction and load of tracking logs in local installations
