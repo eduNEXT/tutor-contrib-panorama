@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Use panorama-elt 0.2.3. Fix bug that skipped the first course in the db
+
 ## Version 0.4.8 (2023-04-26)
 - Use variables to set docker image names
 
