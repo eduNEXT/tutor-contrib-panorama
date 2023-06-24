@@ -1,6 +1,6 @@
 # Change log
 
-## Unreleased
+## Version 0.4.9 (2023-06-24)
 - Use panorama-elt 0.2.3. Fix bug that skipped the first course in the db
 
 ## Version 0.4.8 (2023-04-26)
