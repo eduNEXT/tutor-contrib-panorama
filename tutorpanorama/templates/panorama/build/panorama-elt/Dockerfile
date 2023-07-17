@@ -11,4 +11,3 @@ RUN git clone https://github.com/aulasneo/panorama-elt.git --branch v0.2.3
 RUN pip install -r /panorama-elt/requirements.txt
 
 RUN touch /etc/cron.d/crontab
-CMD ["/bin/sh", "-c", "crontab /etc/cron.d/crontab && cron"]

@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Fix crontab in local docker image
+
 ## Version 0.4.9 (2023-06-24)
 - Use panorama-elt 0.2.3. Fix bug that skipped the first course in the db
 
