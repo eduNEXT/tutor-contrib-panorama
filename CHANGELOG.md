@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Support Tutor 15.x
+
 ## Version 14.0.1 (2023-07-17)
 - Add support for tracking logs in Tutor local installations
 - Update versioning numbers to match Tutor versioning
