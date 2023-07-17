@@ -14,7 +14,7 @@ the most relevant tables. Then it uploads the data to the datalake and updates a
 
 1. Install as a Tutor plugin:
 ```shell
-pip install git+https://github.com/aulasneo/tutor-contrib-panorama
+pip install tutor-contrib-panorama
 ```
 2. Enable the plugin
 ```shell
@@ -26,10 +26,10 @@ The Panorama plugin for Tutor is configured to work with a AWS datalake.
 
 To set up your AWS datalake, you will need to:
 - create or use an IAM user or role with permissions to access the S3 buckets, KMS if encrypted, Glue and Athena.
-- create one S3 bucket to store the data and another as the Athena queries results location
+- create one S3 bucket to store the data, one for raw logs and another as the Athena queries results location
   - we recommend to use encrypted buckets, and to have strict access policies to them
 - create the Panorama database in Athena with `CREATE DATABASE panorama`
-- create the Athena workgroup to keep the queries isolated from other projects
+- create the Athena workgroup 'panorama' to keep the queries isolated from other projects
   - set the 'Query result location' to the bucket created for this workgroup
 
 ### User permissions to work with AWS datalake
@@ -37,14 +37,42 @@ To set up your AWS datalake, you will need to:
 In order to work with a AWS datalake, you will need to create a user (e.g. _panorama-elt_)
 and assign a policy (named e.g. _PanoramaELT_) with at least the following permissions.
 
-Replace **\<region>** and **\<account id>** with proper values. 
+Replace **\<panorama_data_bucket>**, **\<panorama_logs_bucket>**, **\<panorama_athena_bucket>**, 
+**\<region>** and **\<account id>** with proper values. 
 
 ```json
 {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "s3:PutObject",
+            "Resource": [
+                "arn:aws:s3:::<panorama_data_bucket>/openedx/*",
+                "arn:aws:s3:::<panorama_logs_bucket>/tracking_logs/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::<panorama_data_bucket>/PanoramaConnectionTest"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetBucketLocation",
+                "s3:PutObject",
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<panorama_athena_bucket>",
+                "arn:aws:s3:::<panorama_athena_bucket>/*"
+            ]
+        },
+        {
             "Effect": "Allow",
             "Action": [
                 "glue:BatchCreatePartition",
@@ -60,16 +88,18 @@ Replace **\<region>** and **\<account id>** with proper values.
                 "glue:UpdateTable"
             ],
             "Resource": [
-                "arn:aws:athena:<region>:<account id>:workgroup/panorama",
-                "arn:aws:glue:<region>:<account id>:database/panorama",
-                "arn:aws:glue:<region>:<account id>:catalog",
-                "arn:aws:glue:<region>:<account id>:table/panorama/*"
+                "arn:aws:athena:<region>:<account_id>:workgroup/panorama",
+                "arn:aws:glue:<region>:<account_id>:database/panorama",
+                "arn:aws:glue:<region>:<account_id>:catalog",
+                "arn:aws:glue:<region>:<account_id>:table/panorama/*"
             ]
         },
         {
-            "Sid": "VisualEditor1",
             "Effect": "Allow",
-            "Action": "s3:*",
+            "Action": [
+                "kms:GenerateDataKey",
+                "kms:Decrypt"
+            ],
             "Resource": "*"
         }
     ]
@@ -78,6 +108,11 @@ Replace **\<region>** and **\<account id>** with proper values.
 
 If you have encrypted S3 buckets with KMS, you may need to add permissions to get
 the KMS keys.
+
+Additionally, the user must have LakeFormation permissions to access the data locations
+and query the database and all tables.
+
+Finally, you will have to connect Quicksight to Athena to visualize the data.
 
 ## Configuration
 

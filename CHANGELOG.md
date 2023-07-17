@@ -1,5 +1,9 @@
 # Change log
 
+## Unreleased
+- Add support for tracking logs in Tutor local installations
+- Update versioning numbers to match Tutor versioning
+
 ## Version 0.4.10 (2023-07-17)
 - Fix crontab in local docker image
 
