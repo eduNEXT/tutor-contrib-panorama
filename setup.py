@@ -6,7 +6,7 @@ HERE = os.path.abspath(os.path.dirname(__file__))
 
 
 def load_readme():
-    with io.open(os.path.join(HERE, "README.md"), "rt", encoding="utf8") as f:
+    with io.open(os.path.join(HERE, "README.rst"), "rt", encoding="utf8") as f:
         return f.read()
 
 
@@ -34,9 +34,11 @@ setup(
     },
     license="AGPLv3",
     author="Aulsneo",
+    maintainer="Aulasneo",
     author_email="andres@aulasneo.com",
     description="Tutor plugin for Panorama Analytics",
     long_description=load_readme(),
+    long_description_content_type='text/x-rst',
     packages=find_packages(exclude=["tests*"]),
     include_package_data=True,
     python_requires=">=3.7",
@@ -48,7 +50,7 @@ setup(
     },
     classifiers=[
         "Development Status :: 5 - Production/Stable",
-        "Intended Audience :: Site administrators",
+        "Intended Audience :: System Administrators",
         "License :: OSI Approved :: GNU Affero General Public License v3",
         "Operating System :: OS Independent",
         "Programming Language :: Python",

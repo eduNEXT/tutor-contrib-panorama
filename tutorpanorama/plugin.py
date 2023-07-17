@@ -13,7 +13,7 @@ config = {
         "VERSION": __version__,
         "CRONTAB": "55 * * * *",
         "BUCKET": "aulasneo-panorama",
-        "RAW_LOGS_BUCKET": "{{ BUCKET }}",
+        "RAW_LOGS_BUCKET": "{{ PANORAMA_BUCKET }}",
         "BASE_PREFIX": "openedx",
         "REGION": "us-east-1",
         "DATALAKE_DATABASE": "panorama",
