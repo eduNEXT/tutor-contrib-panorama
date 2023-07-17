@@ -1,6 +1,6 @@
 # Change log
 
-## Unreleased
+## Version 15.0.0 (2023-07-17)
 - Support Tutor 15.x
 
 ## Version 14.0.1 (2023-07-17)
