@@ -1,6 +1,6 @@
 # Change log
 
-## Unreleased
+## Version 0.4.10 (2023-07-17)
 - Fix crontab in local docker image
 
 ## Version 0.4.9 (2023-06-24)
