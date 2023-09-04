@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Use panorama-elt 0.2.4. Fix bug with course re-runs
+
 ## Version 14.0.1 (2023-07-17)
 - Add support for tracking logs in Tutor local installations
 - Update versioning numbers to match Tutor versioning
