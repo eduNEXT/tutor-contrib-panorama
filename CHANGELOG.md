@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Add problem weight to course structures
+
 ## Version 14.0.2 (2023-09-04)
 - Use panorama-elt 0.2.4. Fix bug with course re-runs
 
