@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Fix: Set weight field type as double
+
 ## Version 14.1.0 (2023-09-26)
 - Add problem weight to course structures
 
