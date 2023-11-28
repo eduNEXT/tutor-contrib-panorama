@@ -1,6 +1,6 @@
 # Change log
 
-## Unreleased
+## Version 12.0.0 (2023-11-28)
 - Add support for tracking logs in Tutor local installations
 - Update versioning numbers to match Tutor versioning
 - Use panorama-elt 0.2.4
