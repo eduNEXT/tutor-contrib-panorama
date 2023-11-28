@@ -3,6 +3,7 @@
 ## Unreleased
 - Add support for tracking logs in Tutor local installations
 - Update versioning numbers to match Tutor versioning
+- Use panorama-elt 0.2.4
 
 ## Version 0.4.10 (2023-07-17)
 - Fix crontab in local docker image
