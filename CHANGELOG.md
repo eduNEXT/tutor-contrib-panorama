@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Fix compatibility with Lilac
+
 ## Version 12.0.0 (2023-11-29)
 - Add support for tracking logs in Tutor local installations
 - Update versioning numbers to match Tutor versioning

@@ -19,7 +19,6 @@ config = {
         "AWS_ACCESS_KEY": "{{ OPENEDX_AWS_ACCESS_KEY }}",
         "AWS_SECRET_ACCESS_KEY": "{{ OPENEDX_AWS_SECRET_ACCESS_KEY }}",
         "FLB_LOG_LEVEL": 'info',
-        "USE_SPLIT_MONGO": True,
         "RUN_K8S_FLUENTBIT": True,
         "DEBUG": False,
         "LOGS_TOTAL_FILE_SIZE": "1M",

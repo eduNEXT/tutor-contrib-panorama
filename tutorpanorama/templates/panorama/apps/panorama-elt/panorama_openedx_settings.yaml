@@ -18,12 +18,6 @@ datasources:
   mongodb_username: {{ MONGODB_USERNAME }}
   mongodb_password: {{ MONGODB_PASSWORD }}
   mongodb_database: {{ MONGODB_DATABASE }}
-  {% if PANORAMA_USE_SPLIT_MONGO %}
-  mysql_username: {{ OPENEDX_MYSQL_USERNAME }}
-  mysql_password: {{ OPENEDX_MYSQL_PASSWORD }}
-  mysql_host: {{ MYSQL_HOST }}
-  mysql_database: {{ OPENEDX_MYSQL_DATABASE }}
-  {% endif %}
   tables:
   - name: course_structures
     fields:
@@ -481,8 +475,10 @@ datasources:
     - name: linked
       type: tinyint
     - name: invite_key_id
+      value: NULL
       type: char
     - name: should_inactivate_other_customers
+      value: NULL
       type: tinyint
   - name: enterprise_enterprisecustomer
     fields:
@@ -545,12 +541,16 @@ datasources:
     - name: sender_alias
       type: varchar
     - name: reply_to
+      value: NULL
       type: varchar
     - name: hide_labor_market_data
+      value: NULL
       type: tinyint
     - name: enable_universal_link
+      value: NULL
       type: tinyint
     - name: enable_browse_and_request
+      value: NULL
       type: tinyint
   - name: enterprise_pendingenterprisecustomeruser
     fields:
