@@ -42,7 +42,7 @@ setup(
     python_requires=">=3.7",
     install_requires=["tutor>=12.0.0,<13.0.0"],
     entry_points={
-        "tutor.plugin.v1": [
+        "tutor.plugin.v0": [
             "panorama = tutorpanorama.plugin"
         ]
     },

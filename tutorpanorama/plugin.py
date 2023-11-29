@@ -2,8 +2,6 @@ from glob import glob
 import os
 import pkg_resources
 
-from tutor import hooks
-
 from .__about__ import __version__
 
 ################# Configuration
@@ -40,61 +38,25 @@ config = {
     },
 }
 
-################# Initialization tasks
-# To run the script from templates/panorama/tasks/myservice/init, add:
-hooks.Filters.COMMANDS_INIT.add_item((
-    "panorama",
-    ("panorama", "tasks", "panorama-elt", "init"),
-))
-
-################# Docker image management
-# To build an image with `tutor images build myimage`
-hooks.Filters.IMAGES_BUILD.add_item((
-    "panorama",
-    ("plugins", "panorama", "build", "panorama-elt"),
-    "{{ PANORAMA_DOCKER_IMAGE }}",
-    (),
-))
-hooks.Filters.IMAGES_BUILD.add_item((
-    "panorama",
-    ("plugins", "panorama", "build", "panorama-elt-logs"),
-    "{{ PANORAMA_LOGS_DOCKER_IMAGE }}",
-    (),
-))
-# To pull/push an image with `tutor images pull myimage` and `tutor images push myimage`:
-hooks.Filters.IMAGES_PULL.add_item((
-    "panorama",
-    "{{ PANORAMA_DOCKER_IMAGE }}",
-))
-hooks.Filters.IMAGES_PULL.add_item((
-    "panorama",
-    "{{ PANORAMA_LOGS_DOCKER_IMAGE }}",
-))
-hooks.Filters.IMAGES_PUSH.add_item((
-    "panorama",
-    "{{ PANORAMA_DOCKER_IMAGE }}",
-))
-hooks.Filters.IMAGES_PUSH.add_item((
-    "panorama",
-    "{{ PANORAMA_LOGS_DOCKER_IMAGE }}",
-))
-
-# TODO: implement logs extraction and load of tracking logs in local installations
-
-################# You don't really have to bother about what's below this line,
-################# except maybe for educational purposes :)
+hooks = {
+    "init": ["panorama"],
+    "build-image": {
+        "panorama-elt": "{{ PANORAMA_DOCKER_IMAGE }}",
+        "panorama-elt-logs": "{{ PANORAMA_LOGS_DOCKER_IMAGE }}"
+    },
+    "remote-image": {
+        "panorama-elt": "{{ PANORAMA_DOCKER_IMAGE }}",
+        "panorama-elt-logs": "{{ PANORAMA_LOGS_DOCKER_IMAGE }}"
+    },
+}
 
 # Plugin templates
-hooks.Filters.ENV_TEMPLATE_ROOTS.add_item(
-    pkg_resources.resource_filename("tutorpanorama", "templates")
-)
-hooks.Filters.ENV_TEMPLATE_TARGETS.add_items(
-    [
-        ("panorama/build", "plugins"),
-        ("panorama/apps", "plugins"),
-    ],
-)
+
+import os
+templates = os.path.join(os.path.abspath(os.path.dirname(__file__)), "templates")
+
 # Load all patches from the "patches" folder
+patches = {}
 for path in glob(
         os.path.join(
             pkg_resources.resource_filename("tutorpanorama", "patches"),
@@ -102,19 +64,4 @@ for path in glob(
         )
 ):
     with open(path, encoding="utf-8") as patch_file:
-        hooks.Filters.ENV_PATCHES.add_item((os.path.basename(path), patch_file.read()))
-
-# Load all configuration entries
-hooks.Filters.CONFIG_DEFAULTS.add_items(
-    [
-        (f"PANORAMA_{key}", value)
-        for key, value in config["defaults"].items()
-    ]
-)
-hooks.Filters.CONFIG_UNIQUE.add_items(
-    [
-        (f"PANORAMA_{key}", value)
-        for key, value in config["unique"].items()
-    ]
-)
-hooks.Filters.CONFIG_OVERRIDES.add_items(list(config["overrides"].items()))
+        patches.update({os.path.basename(path): patch_file.read()})
