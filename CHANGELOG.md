@@ -1,6 +1,6 @@
 # Change log
 
-## Unreleased
+## Version 14.1.2 (2023-12-01)
 - Fix wrong default raw logs bucket
 
 ## Version 14.1.1 (2023-10-06)
