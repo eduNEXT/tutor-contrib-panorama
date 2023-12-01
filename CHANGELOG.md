@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Fix wrong default raw logs bucket
+
 ## Version 12.1.0 (2023-11-29)
 - Fix compatibility with Lilac
 
