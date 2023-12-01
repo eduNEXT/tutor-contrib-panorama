@@ -3,14 +3,16 @@
 ## Version 16.0.0 (2023-11-17)
 - Upgrade to Palm
 
-## Version 15.1.1 (2023-10-06)
+## Unreleased
+- Fix wrong default raw logs bucket
+
+## Version 14.1.1 (2023-10-06)
 - Fix: Set weight field type as double
 
 ## Version 14.1.0 (2023-09-26)
-## Version 15.1.0 (2023-09-26)
 - Add problem weight to course structures
 
-## Version 15.0.1 (2023-09-04)
+## Version 14.0.2 (2023-09-04)
 - Use panorama-elt 0.2.4. Fix bug with course re-runs
 
 ## Version 14.0.1 (2023-07-17)
