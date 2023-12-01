@@ -3,7 +3,7 @@
 ## Version 16.0.0 (2023-11-17)
 - Upgrade to Palm
 
-## Unreleased
+## Version 16.0.1 (2023-12-01)
 - Fix wrong default raw logs bucket
 
 ## Version 14.1.1 (2023-10-06)
