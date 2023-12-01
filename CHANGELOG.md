@@ -1,10 +1,16 @@
 # Change log
 
+## Unreleased
+- Fix wrong default raw logs bucket
+
 ## Version 14.1.1 (2023-10-06)
 - Fix: Set weight field type as double
 
 ## Version 14.1.0 (2023-09-26)
 - Add problem weight to course structures
+
+## Version 12.1.0 (2023-11-29)
+- Fix compatibility with Lilac
 
 ## Version 14.0.2 (2023-09-04)
 - Use panorama-elt 0.2.4. Fix bug with course re-runs
