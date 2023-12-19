@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Upgrade Fluentbit to 2.32.0
+
 ## Version 12.1.1 (2023-12-01)
 - Fix wrong default raw logs bucket
 
