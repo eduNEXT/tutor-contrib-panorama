@@ -1,6 +1,6 @@
 # Change log
 
-## Unreleased
+## Version 15.2.0 (2023-12-19)
 - Upgrade Fluentbit to 2.32.0
 
 ## Version 12.1.1 (2023-12-01)
