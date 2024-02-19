@@ -1,8 +1,10 @@
+from __future__ import annotations
+
 from glob import glob
 import os
 import pkg_resources
 
-from tutor import hooks
+from tutor import env, hooks
 
 from .__about__ import __version__
 
@@ -41,11 +43,20 @@ config = {
 }
 
 ################# Initialization tasks
-# To run the script from templates/panorama/tasks/myservice/init, add:
-hooks.Filters.COMMANDS_INIT.add_item((
-    "panorama",
-    ("panorama", "tasks", "panorama-elt", "init"),
-))
+MY_INIT_TASKS: list[tuple[str, tuple[str, ...], int]] = [
+    ("panorama", ("panorama", "tasks", "panorama-elt", "init"), hooks.priorities.HIGH),
+]
+
+# For each task added to MY_INIT_TASKS, we load the task template
+# and add it to the CLI_DO_INIT_TASKS filter, which tells Tutor to
+# run it as part of the `init` job.
+for service, template_path, priority in MY_INIT_TASKS:
+    full_path: str = pkg_resources.resource_filename(
+        "tutorpanorama", os.path.join("templates", *template_path)
+    )
+    with open(full_path, encoding="utf-8") as init_task_file:
+        init_task: str = init_task_file.read()
+    hooks.Filters.CLI_DO_INIT_TASKS.add_item((service, init_task), priority=priority)
 
 ################# Docker image management
 # To build an image with `tutor images build myimage`

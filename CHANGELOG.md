@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Fixed call to init task
+
 ## Version 16.1.0 (2023-12-19)
 - Upgrade Fluentbit to 2.32.0
 
