@@ -1,6 +1,6 @@
 # Change log
 
-## Unreleased
+## Version 16.2.0 (2024-02-19)
 - Fixed call to init task
 
 ## Version 16.1.0 (2023-12-19)
