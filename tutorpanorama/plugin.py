@@ -44,7 +44,7 @@ config = {
 
 ################# Initialization tasks
 MY_INIT_TASKS: list[tuple[str, tuple[str, ...], int]] = [
-    ("panorama", ("panorama", "tasks", "panorama-elt", "init"), hooks.priorities.HIGH),
+    ("panorama", ("panorama", "tasks", "panorama-elt", "init"), hooks.priorities.LOW),
 ]
 
 # For each task added to MY_INIT_TASKS, we load the task template

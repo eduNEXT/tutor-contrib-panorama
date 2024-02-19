@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Fixed plugin load priority
+
 ## Version 16.2.0 (2024-02-19)
 - Fixed call to init task
 
