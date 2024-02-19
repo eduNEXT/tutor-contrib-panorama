@@ -1,6 +1,6 @@
 # Change log
 
-## Unreleased
+## Version 16.2.1 (2024-02-19)
 - Fixed plugin load priority
 
 ## Version 16.2.0 (2024-02-19)
