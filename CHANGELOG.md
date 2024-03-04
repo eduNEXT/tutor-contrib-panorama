@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Upgraded panorama-elt to 0.3.1
+
 ## Version 16.2.1 (2024-02-19)
 - Fixed plugin load priority
 
