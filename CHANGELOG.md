@@ -1,6 +1,6 @@
 # Change log
 
-## Unreleased
+## Version 16.2.2 (2024-03-04)
 - Upgraded panorama-elt to 0.3.1
 
 ## Version 16.2.1 (2024-02-19)
