@@ -1,4 +1,4 @@
-{% if PANORAMA_RUN_K8S_FLUENTBIT %}
+{% if PANORAMA_RUN_K8S_FLUENTBIT and PANORAMA_MODE in ['SAAS', 'CUSTOM'] %}
 # Panorama logs (fluentbit) for K8s - ClusterRole
 ---
 apiVersion: v1

@@ -18,4 +18,4 @@ RUN ./aws/install
 RUN rm awscliv2.zip
 
 # Set the AWS default region
-RUN aws configure set region us-east-1
+RUN aws configure set region {{ PANORAMA_REGION }}
