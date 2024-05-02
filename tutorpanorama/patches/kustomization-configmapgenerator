@@ -1,3 +1,4 @@
+{% if PANORAMA_MODE != 'DEMO' %}
 # Config map with the configuration file for panorama-elt
 
 - name: panorama-elt-config
@@ -7,7 +8,7 @@
     labels:
         app.kubernetes.io/name: panorama-elt
 
-{% if PANORAMA_RUN_K8S_FLUENTBIT %}
+{% if PANORAMA_RUN_K8S_FLUENTBIT and PANORAMA_MODE != 'FREE' %}
 - name: fluent-bit-config
   files:
     - ../env/plugins/panorama/apps/panorama-elt/fluent-bit.conf
@@ -15,4 +16,7 @@
   options:
     labels:
       app.kubernetes.io/name: fluentbit
+{% endif %}
+{% else %}
+# Panorama in DEMO mode, skipping configmaps
 {% endif %}

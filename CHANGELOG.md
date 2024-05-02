@@ -1,5 +1,9 @@
 # Change log
 
+## Unreleased
+- Panorama new experience: introducing DEMO, FREE, SAAS and CUSTOM modes
+- Integration into Open edX via the Panorama MFE
+
 ## Version 16.2.2 (2024-03-04)
 - Upgraded panorama-elt to 0.3.1
 

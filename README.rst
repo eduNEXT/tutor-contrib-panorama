@@ -28,6 +28,44 @@ Installation
 
     tutor plugins enable panorama
 
+Panorama Modes
+--------------
+
+Starting with version 16.3.0, the Tutor Panorama Plugin now offers three modes to use Panorama:
+- DEMO: Full access to the standard Panorama service, with anonymized data
+- FREE: Hosted Panorama service for free, with limited functionalities
+- SAAS: Hosted Panorama service provided by Aulasneo with most typical
+- CUSTOM: Full potentiality of Panorama, in either SaaS modality or self hosted.
+
+Since 16.3.0, the default mode of Panorama is *DEMO*.
+
+Panorama DEMO mode
+==================
+
+In DEMO mode you can try the functionality of Panorama with anonymized data.
+You will be able to experiment the power of Panorama as you would with your data.
+What you will see is the actual Panorama SaaS solution from our production servers, showing the
+dashboards offered out-of-the-box to the SAAS mode.
+
+In the DEMO mode, Panorama will not extract any data from your server.
+
+To activate the DEMO mode, just install the plugin, rebuild the `openedx` and the `mfe` images
+and restart your deployment. No specific configuration is needed.
+
+.. code-block::
+    pip install tutor-contrib-panorama
+    tutor plugins enable panorama
+    tutor images build openedx
+    tutor images build mfe
+    tutor {local|k8s} restart
+
+Panorama FREE mode
+==================
+
+Panorama FREE mode offers a basic -yet powerful- set of dashboards that you can use for free.
+To get your FREE credentials, please register at `Panorama <https://panorama.aulasneo.com>`_
+and send us an email to info@aulasneo.com
+
 Setting up the datalake
 -----------------------
 
