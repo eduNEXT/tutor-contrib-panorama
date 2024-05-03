@@ -1,5 +1,8 @@
 # Change log
 
+## Unreleased
+- Fix a bug causing an error when db password is all numeric
+
 ## Version 16.2.2 (2024-03-04)
 - Upgraded panorama-elt to 0.3.1
 

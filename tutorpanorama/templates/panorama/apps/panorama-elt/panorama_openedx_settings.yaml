@@ -15,12 +15,12 @@ datasources:
 - type: openedx_course_structures
   name: openedx_course_structures
   mongodb_host: {{ MONGODB_HOST }}
-  mongodb_username: {{ MONGODB_USERNAME }}
-  mongodb_password: {{ MONGODB_PASSWORD }}
+  mongodb_username: "{{ MONGODB_USERNAME }}"
+  mongodb_password: "{{ MONGODB_PASSWORD }}"
   mongodb_database: {{ MONGODB_DATABASE }}
   {% if PANORAMA_USE_SPLIT_MONGO %}
-  mysql_username: {{ OPENEDX_MYSQL_USERNAME }}
-  mysql_password: {{ OPENEDX_MYSQL_PASSWORD }}
+  mysql_username: "{{ OPENEDX_MYSQL_USERNAME }}"
+  mysql_password: "{{ OPENEDX_MYSQL_PASSWORD }}"
   mysql_host: {{ MYSQL_HOST }}
   mysql_database: {{ OPENEDX_MYSQL_DATABASE }}
   {% endif %}
@@ -61,8 +61,8 @@ datasources:
       type: double
 - type: mysql
   name: openedx_mysql
-  mysql_username: {{ OPENEDX_MYSQL_USERNAME }}
-  mysql_password: {{ OPENEDX_MYSQL_PASSWORD }}
+  mysql_username: "{{ OPENEDX_MYSQL_USERNAME }}"
+  mysql_password: "{{ OPENEDX_MYSQL_PASSWORD }}"
   mysql_host: {{ MYSQL_HOST }}
   mysql_database: {{ OPENEDX_MYSQL_DATABASE }}
   tables:
