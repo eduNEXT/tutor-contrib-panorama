@@ -1,6 +1,6 @@
 # Change log
 
-## Unreleased
+## Version 16.2.3 (2024-05-03)
 - Fix a bug causing an error when db password is all numeric
 
 ## Version 16.2.2 (2024-03-04)
