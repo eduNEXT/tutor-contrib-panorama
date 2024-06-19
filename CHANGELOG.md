@@ -1,5 +1,9 @@
 # Change log
 
+## Version 16.3.0 (2024-06-05)
+- Panorama new experience: introducing DEMO, FREE, SAAS and CUSTOM modes
+- Integration into Open edX via the Panorama MFE
+
 ## Version 16.2.3 (2024-05-03)
 - Fix a bug causing an error when db password is all numeric
 

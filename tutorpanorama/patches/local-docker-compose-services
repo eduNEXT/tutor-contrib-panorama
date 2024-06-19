@@ -1,3 +1,4 @@
+{% if PANORAMA_MODE != 'DEMO' %}
 # Docker image for local installation
 panorama:
     image: {{ PANORAMA_DOCKER_IMAGE }}
@@ -7,6 +8,7 @@ panorama:
     command: bash -c "crontab /etc/cron.d/crontab && exec cron -f"
     restart: unless-stopped
 
+{% if PANORAMA_MODE != 'FREE' %}
 panorama_logs:
     image: {{ PANORAMA_LOGS_DOCKER_IMAGE }}
     environment:
@@ -18,3 +20,9 @@ panorama_logs:
         - ../plugins/panorama/apps/panorama-elt/parsers.conf:/fluent-bit/etc/parsers.conf:ro
         - ../../data/lms:/openedx/data
     restart: unless-stopped
+{% else %}
+# Panorama in FREE mode, skipping fluentbit docker images
+{% endif %}
+{% else %}
+# Panorama in DEMO mode, skipping ELT and fluentbit docker images
+{% endif %}

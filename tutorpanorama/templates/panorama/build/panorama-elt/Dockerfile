@@ -6,7 +6,7 @@ RUN mkdir config
 # Install cron
 RUN apt-get update && apt-get install -y cron git
 
-RUN git clone https://github.com/aulasneo/panorama-elt.git --branch v0.3.1
+RUN git clone https://github.com/aulasneo/panorama-elt.git --branch {{ PANORAMA_ELT_VERSION }}
 
 RUN pip install -r /panorama-elt/requirements.txt
 
